@@ -57,3 +57,37 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
+const weeklyChallenges = [
+  "Drink 8 glasses of water each day",
+  "Take a 10-minute walk daily",
+  "Go to sleep before 11pm",
+  "Journal for 5 minutes each morning",
+  "Try a new healthy recipe",
+  "Avoid social media for 1 hour a day",
+  "Practice gratitude every night",
+];
+
+// Pick a new challenge every Monday
+function setWeeklyChallenge() {
+  const now = new Date();
+  const nextMonday = new Date();
+  nextMonday.setDate(now.getDate() + ((1 + 7 - now.getDay()) % 7));
+  nextMonday.setHours(0, 0, 0, 0);
+
+  const delay = (nextMonday - now) / (1000 * 60); // minutes until next Monday
+
+  const challenge = weeklyChallenges[Math.floor(Math.random() * weeklyChallenges.length)];
+  chrome.storage.local.set({ weeklyChallenge: { text: challenge, completed: false } });
+
+  chrome.alarms.create("weeklyChallengeReset", { delayInMinutes: delay });
+}
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === "weeklyChallengeReset") {
+    setWeeklyChallenge();
+  }
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  setWeeklyChallenge();
+});

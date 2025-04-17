@@ -430,7 +430,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
+  chrome.storage.local.get("weeklyChallenge", ({ weeklyChallenge }) => {
+    if (weeklyChallenge && !weeklyChallenge.completed) {
+      const challengeBox = document.createElement("div");
+      challengeBox.id = "weekly-challenge";
+      challengeBox.innerHTML = `
+        <h2>Weekly Challenge</h2>
+        <label class="weekly-label">
+          <input type="checkbox" id="weekly-check" />
+          <span>${weeklyChallenge.text}</span>
+        </label>
+      `;
+      document.body.appendChild(challengeBox);
+  
+      document.getElementById("weekly-check").addEventListener("change", (e) => {
+        const isChecked = e.target.checked;
+        chrome.storage.local.set({
+          weeklyChallenge: { ...weeklyChallenge, completed: isChecked },
+        });
+      
+        if (isChecked) {
+          challengeBox.classList.add("completed");
+        } else {
+          challengeBox.classList.remove("completed");
+        }
+      });
+      
+    }
+  });  
 
   categoriesContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("category-button")) {

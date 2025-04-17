@@ -487,6 +487,44 @@ input[type="checkbox"]:checked+.task-text {
     opacity: 0.9;
     transition: opacity 0.4s ease-in-out;
 }
+
+#weekly-challenge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 16px 20px;
+    border-radius: 16px;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    z-index: 1001;
+}
+
+#weekly-challenge h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #4158D0;
+}
+
+.weekly-label {
+    font-size: 1rem;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #2c3e50;
+}
+
+#weekly-check {
+    width: 18px;
+    height: 18px;
+}
+
+#weekly-challenge.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
 .thank-you-message {
     position: fixed;
     top: 80%;
