@@ -469,6 +469,24 @@ input[type="checkbox"]:checked+.task-text {
     /* Hide the categories container by default */
 }
 
+.quote-overlay {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    color: white;
+    font-size: 1.5rem;
+    max-width: 30%;
+    font-style: italic;
+    font-family: 'DM Sans', sans-serif;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-align: right;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0.9;
+    transition: opacity 0.4s ease-in-out;
+}
 .thank-you-message {
     position: fixed;
     top: 80%;

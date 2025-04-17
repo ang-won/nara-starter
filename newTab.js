@@ -275,6 +275,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const quotes = [
+    "You are doing better than you think ✨",
+    "One step at a time 💫",
+    "Small progress is still progress 🌱",
+    "Your effort matters 🫶",
+    "Be proud of yourself 🌈",
+    "You’ve got this 💪",
+    "Kindness to self is strength 🧘",
+  ];
+  
+  const quoteOverlay = document.getElementById("quote-overlay");
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteOverlay.textContent = randomQuote;
+  quoteOverlay.classList.remove("hidden");
+  
+
   // Updated hardcoded tasks with new categories and random selection
   const taskPool = {
     daily: [
@@ -413,6 +429,8 @@ document.addEventListener("DOMContentLoaded", () => {
       changeBackgroundWithSlide(initialBackground);
     }
   });
+
+
 
   categoriesContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("category-button")) {
