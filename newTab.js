@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const deerAreas = [
     {
       id: "deer1",
-      top: 530,
-      left: 400,
+      top: 350,
+      left: 310,
       width: 150,
       height: 250,
       circleImage: "assets/circle_selfcare.png",
@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "deer2",
-      top: 570,
-      left: 1510,
+      top: 350,
+      left: 1200,
       width: 100,
       height: 200,
       circleImage: "assets/circle_lovedones.png",
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "deer3",
-      top: 630,
-      left: 1310,
+      top: 450,
+      left: 1030,
       width: 100,
       height: 200,
       circleImage: "assets/circle_pets.png",
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "deer4",
-      top: 540,
-      left: 800,
+      top: 380,
+      left: 620,
       width: 120,
       height: 220,
       circleImage: "assets/circle_thehome.png",
@@ -109,8 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "deer5",
-      top: 600,
-      left: 1150,
+      top: 400,
+      left: 900,
       width: 90,
       height: 160,
       circleImage: "assets/circle_themind.png",
@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "deer6", // Unique ID for the new hover area
-      top: 30, // Adjust the top position to place it in the top right-hand corner
-      left: 1280, // Adjust the left position to place it in the top right-hand corner
+      top: 0, // Adjust the top position to place it in the top right-hand corner
+      left: 1000, // Adjust the left position to place it in the top right-hand corner
       width: 150, // Adjust the width of the hover area
       height: 150, // Adjust the height of the hover area
       circleImage: "assets/circle_somethingelse.png", // New image for the hover area
